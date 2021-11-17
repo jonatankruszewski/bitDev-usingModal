@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState, useEffect }
+  from 'react';
+import { PrimaryButton } from '@jonakru/modal.ui.button'
+import { ModalConfirm } from '@jonakru/modal.ui.modal-confirm'
+const App = () => {
+  const [open, setOpen] = useState(false)
+  const cancel = () => alert('Cancelled');
+  const cnfirm = () => alert('Confirm');
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return (<>
+    {open ? <PrimaryButton text="Hide modal" cb={() => setOpen(false)}></PrimaryButton> :
+      <PrimaryButton text="Show modal" cb={() => setOpen(true)}></PrimaryButton>}
+    <ModalConfirm show={open}
+      onConfirm={cnfirm} backDrop={true} clickAway={false} onCancel={cancel}>
+      <div>Hello I am a child</div>
+    </ModalConfirm>
+
+  </>
+  )
 }
 
 export default App;
