@@ -1,15 +1,13 @@
 import './App.css';
-import React, { useState, useEffect }
+import React, { useState }
   from 'react';
 import { PrimaryButton } from '@jonakru/modal.ui.button'
-import { Modal } from '@jonakru/modal.ui.modal'
 import { Card } from '@jonakru/modal.ui.card'
 import { ModalConfirm } from '@jonakru/modal.ui.modal-confirm';
 
 const App = () => {
   const [open, setOpen] = useState(false)
-  const cancel = () => alert('Cancelled');
-  const cnfirm = () => alert('Confirm');
+  const confirm = () => alert('Confirm');
 
   return (<>
     {open ? <PrimaryButton text="Hide modal" cb={() => setOpen(false)}></PrimaryButton> :
@@ -18,7 +16,7 @@ const App = () => {
       show={open}
       backDrop={false}
       clickAway={false}
-      onConfirm={cnfirm}
+      onConfirm={confirm}
       showCancel={false}
       closeModal={() => setOpen(false)}
     >
