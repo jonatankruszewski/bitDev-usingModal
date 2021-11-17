@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@jonakru/modal.ui.button": "^1.0.2",
-    "@jonakru/modal.ui.modal-confirm": "^1.0.2",
+    "@jonakru/modal.ui.button": "^1.0.3",
+    "@jonakru/modal.ui.card": "^1.0.1",
+    "@jonakru/modal.ui.modal": "^1.0.7",
+    "@jonakru/modal.ui.modal-confirm": "^1.0.7",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
